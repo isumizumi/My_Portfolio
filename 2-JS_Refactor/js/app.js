@@ -15,12 +15,12 @@
 // })
 
 //REFACTOR:
-addDice() => {
+function addDice() {
   $('.dice').append('<div class="die">0</div>')
 }
 
-rollDice() => {
-  $('.die').each( (k, die) => {
+function rollDice() {
+  $('.die').each(function (k, die) {
     let value = Math.floor((Math.random() * 6) + 1)
     $('.die').text(value)
   })
