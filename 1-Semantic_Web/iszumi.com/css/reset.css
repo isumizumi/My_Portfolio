@@ -1,0 +1,22 @@
+html, body, div, span,
+h1, h2, h3, p,
+a, address,
+img, strong,
+b, u, i, center,
+ul, li,
+label, footer, header,
+menu, nav, output, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+ul {
+	list-style: none;
+}
