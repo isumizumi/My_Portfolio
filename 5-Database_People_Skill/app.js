@@ -1,14 +1,23 @@
 var express     = require('express');
 var path        = require('path');
 var bodyParser  = require('body-parser');
+var cors        = require('cors')
 
 var index  = require('./routes/index');
 var users  = require('./routes/users');
 var api    = require('./routes/api');
 
 var mongoose = require('mongoose');
-mongoose.Promise  = global.Promise;
 mongoose.connect('mongodb://localhost/people_skills')
+mongoose.Promise  = global.Promise;
+// mongoose.Promise = require('bluebird');
+// mongoose.Promise = require('q').Promise;
+
+var db = mongoose.connection
+db.on('error', console.error.bind(console, 'connection error:'))
+db.once('open', function () {
+  console.log('Database Connected')
+})
 
 var app = express();
 
@@ -19,6 +28,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 app.use('/', index);
 app.use('/users', users);
@@ -39,7 +49,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send('error');
 });
 
 module.exports = app;

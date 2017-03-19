@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express     = require('express');
+const router      = express.Router();
+const controller  = require('../controllers/controllerUser')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.post('/seed', controller.seed)
+
+router.post('/', controller.addUser)
+
+router.get('/', controller.getAll)
+
+router.get('/:id', controller.getOne)
+
+router.delete('/:id', controller.delete)
+
+router.post('/skill/:id', controller.addSkill)
+
+router.put('/skill:id', controller.updateSkill)
+
+router.delete('/skill/:id', controller.deleteSkill)
 
 module.exports = router;
