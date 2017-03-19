@@ -29,7 +29,7 @@ section {
   margin: 3px;
 }
 
-.button {
+.clickrandom {
     position: relative;
     background-color: #494eb2;
     border: none;
@@ -45,7 +45,7 @@ section {
     cursor: pointer;
 }
 
-.button:after {
+.clickrandom:after {
     content: "";
     background: #88b2f7;
     display: block;
@@ -58,7 +58,7 @@ section {
     transition: all 0.8s
 }
 
-.button:active:after {
+.clickrandom:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
