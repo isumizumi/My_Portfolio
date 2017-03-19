@@ -4,9 +4,8 @@
 
 Description:
 
-This is about homepage of my personal website using Drupal [1].
-
-[1]: https://iszumi.com
+This part is about homepage of my personal website [link].
+[link]: https://iszumi.com "iszumi.com (based on Drupal)"
 
 ### **Usage**
 
