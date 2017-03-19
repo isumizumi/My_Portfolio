@@ -1,9 +1,4 @@
 /**
- * RESET
- */
-
-@import "reset.css";
-/**
  * GLOBAL
  */
 
@@ -87,6 +82,7 @@ ul {  list-style-type: disc; }
 	border: 1px solid #aeaeae;
 	padding: 5px;
 }
+
 /**
  * LAYOUT
  */
@@ -105,6 +101,7 @@ ul {  list-style-type: disc; }
 /**
  * HEADER
  */
+
 #header-top {
 	background-color: #fff;
 	padding-top: 15px;
@@ -208,7 +205,9 @@ ul {  list-style-type: disc; }
 #navigation ul.menu li a.active, #navigation ul.menu li a:hover{
   color: #d92546;
 }
+
 /* Little tricking with positions */
+
 .navigation  li {
 	float:left;
 	position:relative;
@@ -219,7 +218,9 @@ ul {  list-style-type: disc; }
 	color: #ddd;
 	text-transform: uppercase;
 }
+
 /* Sub Cat Menu stuff*/
+
 .navigation  ul ul{
 	position:absolute;
 	left:0;
@@ -238,9 +239,8 @@ ul {  list-style-type: disc; }
 }
 
 /* Sub Cat menu link properties */
-.navigation ul ul a {
 
-}
+.navigation ul ul a { }
 .navigation  ul ul li a {
 	background:#111314;
 	display:block;  	/* Making sure a element covers whole li area */
@@ -304,6 +304,7 @@ border-bottom: 1px solid #ceaeb4;
 padding: 4px 0;
 list-style: none;
 }
+
 /**
  * FOOTER
  */
@@ -350,6 +351,7 @@ list-style: none;
 	font-size: 14px;
 	width: 100%;
 }
+
 /* Homepage Slider
 ------------------------------------------------- */
 #slider{
@@ -434,9 +436,11 @@ font-size: 1.4em;
 padding: 10px;
 font-family: 'Open Sans Condensed', sans-serif;
 }
+
 /**
  * CUSTOM HOMEPAGE
  */
+
 .page-header {
 	text-align: center;
 	border-bottom: 1px solid #ddd;
@@ -499,4 +503,54 @@ margin-top: 50px;
 }
 .last {
 	margin-right: 0;
+}
+
+/**
+ * @file
+ * Generic theme-independent base styles.
+ */
+
+/**
+ * Inline items.
+ */
+
+.container-inline div,
+.container-inline label {
+  display: inline;
+}
+
+/* Fieldset contents always need to be rendered as block. */
+
+.container-inline .fieldset-wrapper {
+  display: block;
+}
+
+/**
+ * Hide elements visually, but keep them available for screen-readers.
+ *
+ * Used for information required for screen-reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+}
+
+/**
+ * The .element-focusable class extends the .element-invisible class to allow
+ * the element to be focusable when navigated to via the keyboard.
+ */
+
+.element-invisible.element-focusable:active,
+.element-invisible.element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
 }
